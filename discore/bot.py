@@ -172,8 +172,7 @@ class Bot(commands.AutoShardedBot):
 
     async def on_ready(self):
         self.start_time = datetime.datetime.now()
-        _log.info(f"Bot launched in {(self.start_time - self.initialisation_time).total_seconds():.3f}s,"
-                  f" ready to use (prefix {self.command_prefix!r})")
+        _log.info(f"Bot launched in {(self.start_time - self.initialisation_time).total_seconds():.3f}s")
 
     async def on_disconnect(self):
         _log.warning(f"Bot disconnected")
