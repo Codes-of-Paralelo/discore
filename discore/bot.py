@@ -11,7 +11,12 @@ from os import path
 import logging
 import datetime
 from importlib.metadata import version
-from typing import Union, Type, Any, Optional, Self
+from typing import Union, Type, Any, Optional
+
+try:
+    from typing import Self  # Python 3.11+
+except ImportError:
+    from typing_extensions import Self  # For older versions
 
 from aiohttp import ServerDisconnectedError, ClientOSError
 from i18n import t
